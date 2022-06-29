@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package hello;
+package classroom;
 
 import org.junit.Before;
 import org.junit.Test;
