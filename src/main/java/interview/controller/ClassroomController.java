@@ -1,4 +1,4 @@
-package controller;
+package interview.controller;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import model.Classroom;
-import repository.ClassroomRepository;
-import repository.CourseRepository;
+import interview.model.Classroom;
+import interview.repository.ClassroomRepository;
+import interview.repository.CourseRepository;
 
 @RestController
 public class ClassroomController {

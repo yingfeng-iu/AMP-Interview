@@ -1,4 +1,4 @@
-package model;
+package interview.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,14 +9,15 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Classroom {
+public class Course {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	private String address;
+	private String title;
+	private String instructor;
 	private String department;
-	private Integer seatCapacity;
-	
+	private Integer numberOfRegistrations;
+
 }

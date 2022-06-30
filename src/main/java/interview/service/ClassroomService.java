@@ -1,4 +1,4 @@
-package service;
+package interview.service;
 
 import org.springframework.stereotype.Service;
 
