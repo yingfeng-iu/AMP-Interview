@@ -24,6 +24,7 @@ public class ClassroomController {
      * @param courseId ID of the given course.
      * @return list of classrooms available
      */
+	// URL: /classrooms/findAll
 	public List<Classroom> getAvailableClassrooms(@RequestParam Integer courseId) {
 		// TODO replace below with implementation
 		return null;
@@ -34,6 +35,7 @@ public class ClassroomController {
      * @param courseId ID of the given course.
      * @return classroom reserved
      */
+	// URL: /classrooms/reserve
 	public Classroom reserveClassroom(@RequestParam Integer courseId) {
 		// TODO replace below with implementation
 		return null;
@@ -44,6 +46,7 @@ public class ClassroomController {
      * @param courseIds list of IDs of the given courses.
      * @return classrooms reserved
      */
+	// URL: /classrooms/reserveAll
 	public List<Classroom> reserveClassrooms(@RequestParam List<Integer> courseIds) {
 		// TODO replace below with implementation
 		return null;
