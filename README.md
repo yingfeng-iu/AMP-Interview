@@ -16,4 +16,4 @@ Implement the following APIs for classroom reservation:
 * Given a course, find an available classroom and reserve it for the course.
 * Implement a strategy to reserve classrooms for all courses to the extent possible.
 
-A skeleton of the project is provided on the master branch. Create a feature branch from master and complete the code. Feel free to add new or change existing fields, annotations, methods, classes etc (Note: no need to add getters/setters as they are provided by lombok already). When you are done, commit your feature branch to the repository.
+A skeleton of the project is provided on the master branch. Create a feature branch from master and complete the code. Feel free to add new or change existing fields, annotations, methods, classes etc (Note: no need to add boilerplate code such as getters/setters as they are provided by lombok already). When you are done, commit your feature branch to the repository.
