@@ -12,7 +12,7 @@ The classroom reservation must abide to the following rules:
 * A classroom reserved for a course must be able to seat all students registered for that course.
 
 Implement the following APIs for classroom reservation:
-* Given a course, find all avaiable classrooms.
+* Given a course, find all avaiable classrooms for it.
 * Given a course, find an available classroom and reserve it for the course.
 * Implement a strategy to reserve classrooms for all courses to the extent possible.
 
