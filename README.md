@@ -11,9 +11,9 @@ The classroom reservation must abide to the following rules:
 * A classroom can only be reserved for courses offered by its own department.
 * A classroom assigned for a course must be able to seat all students registered for that course.
 
-Implement the following APIs for classroom reservation. Feel free to add new or change existing fields, annotations, methods, classes etc. 
+Implement the following APIs for classroom reservation. 
 * Given a course, find all avaiable classrooms.
 * Given a course, find an available classroom and reserve it for the course.
 * Implement a strategy to reserve classrooms for all courses to the extent possible.
 
-A skeleton of the project is provided on the master branch. Create a feature branch from master and complete the code. When you are done, commit your feature branch to the repository.
+A skeleton of the project is provided on the master branch. Create a feature branch from master and complete the code. Feel free to add new or change existing fields, annotations, methods, classes etc. When you are done, commit your feature branch to the repository.
