@@ -7,7 +7,7 @@ Assume we have a table of all courses for the semester, and a table of all class
 * Each classroom belongs to a particular department.
 * The seat capacity of each classroom is known.
 
-Initially, no classroom is reserved for any course. Now, regsitra needs to reserve classrooms for courses. The classroom reservation must abide to the following rules:
+Initially, no classroom is reserved for any course. Now, registrar needs to reserve classrooms for courses. The classroom reservation must abide to the following rules:
 * A classroom can only be reserved for courses offered by its own department.
 * A classroom reserved for a course must be able to seat all students registered for that course.
 
