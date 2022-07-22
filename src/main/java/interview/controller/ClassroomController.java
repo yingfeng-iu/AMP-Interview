@@ -48,8 +48,11 @@ public class ClassroomController {
 		Course course = courseRepository.findById(courseId);
 		Classroom classroom = classroomRepository.findAvailableClassroomByDepartment(course.getDepartment());
 		//throw error if no classroom found
-		classroom.setCourseID(courseId);
-		classroomRepository.save(classroom);
+		course.setClassroom(classroom);
+		courseRepository.save(course);
+
+//		classroom.setCourseID(courseId);
+//		classroomRepository.save(classroom);
 		return classroom;
 	}
 
@@ -58,10 +61,12 @@ public class ClassroomController {
      * @param courseIds list of IDs of the given courses.
      * @return classrooms reserved
      */
+	@GetMapping('/classrooms/reserveAll')
 	// URL: /classrooms/reserveAll
 	public List<Classroom> reserveClassrooms(@RequestParam List<Integer> courseIds) {
 		// TODO replace below with implementation
 		List<Classroom> classrooms = new ArrayList<Classroom>();
+		//sort courses
 		courseIds.forEach((courseId) -> {
 			Course course = courseRepository.findById(courseId);
 			Classroom classroom = classroomRepository.findAvailableClassroomByDepartment(course.getDepartment());

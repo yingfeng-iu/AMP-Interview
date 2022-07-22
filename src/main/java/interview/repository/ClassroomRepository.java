@@ -7,8 +7,8 @@ import interview.model.Classroom;
 
 @RepositoryRestResource(collectionResourceRel = "classrooms", path = "classrooms")
 public interface ClassroomRepository extends CrudRepository<Classroom, String> {
-    @Query("SELECT c FROM Classroom c WHERE c.department =?1 and c.courseID=NULL")
-    List<Classroom> findAvailableClassroomsByDepartment(String department);
+    @Query("SELECT c FROM Classroom c WHERE c.department =?1 and c.seatCapacity >= ?2 c.courseID=NULL")
+    List<Classroom> findAvailableClassroomsByDepartment(String department, Integer noOfRegistrations);
 
     @Query("SELECT c FROM Classroom c WHERE c.department =?1 and c.courseID=NULL limit 1")
     Classroom findAvailableClassroomByDepartment(String department);

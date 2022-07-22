@@ -18,6 +18,5 @@ public class Classroom {
 	private String address;
 	private String department;
 	private Integer seatCapacity;
-	private long courseID;
 	
 }

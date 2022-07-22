@@ -7,6 +7,8 @@ import javax.persistence.Id;
 
 import lombok.Data;
 
+import java.sql.Time;
+
 @Entity
 @Data
 public class Course {
@@ -19,5 +21,10 @@ public class Course {
 	private String instructor;
 	private String department;
 	private Integer numberOfRegistrations;
+	@ManyToOne
+	@JoinColumn(name = 'classroomID')
+	private Classroom classroom;
+	private Integer startTime;
+	private Integer weekDay;
 
 }
