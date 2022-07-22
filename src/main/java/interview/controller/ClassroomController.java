@@ -1,8 +1,12 @@
 package interview.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import interview.model.Course;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,9 +29,11 @@ public class ClassroomController {
      * @return list of classrooms available
      */
 	// URL: /classrooms/findAll
+	@GetMapping("/classrooms/findAll")
 	public List<Classroom> getAvailableClassrooms(@RequestParam Integer courseId) {
 		// TODO replace below with implementation
-		return null;
+		Course course = courseRepository.findById(courseId);
+		return (List<Classroom>) classroomRepository.findAvailableClassroomsByDepartment(course.getDepartment());
 	}
         
     /**
@@ -36,9 +42,15 @@ public class ClassroomController {
      * @return classroom reserved
      */
 	// URL: /classrooms/reserve
+	@GetMapping("/classrooms/reserve")
 	public Classroom reserveClassroom(@RequestParam Integer courseId) {
 		// TODO replace below with implementation
-		return null;
+		Course course = courseRepository.findById(courseId);
+		Classroom classroom = classroomRepository.findAvailableClassroomByDepartment(course.getDepartment());
+		//throw error if no classroom found
+		classroom.setCourseID(courseId);
+		classroomRepository.save(classroom);
+		return classroom;
 	}
 
     /**
@@ -49,7 +61,17 @@ public class ClassroomController {
 	// URL: /classrooms/reserveAll
 	public List<Classroom> reserveClassrooms(@RequestParam List<Integer> courseIds) {
 		// TODO replace below with implementation
-		return null;
+		List<Classroom> classrooms = new ArrayList<Classroom>();
+		courseIds.forEach((courseId) -> {
+			Course course = courseRepository.findById(courseId);
+			Classroom classroom = classroomRepository.findAvailableClassroomByDepartment(course.getDepartment());
+			if (classroom.isPresent()) {
+				classroom.setCourseID(courseId);
+				classroomRepository.save(classroom);
+				classrooms.add(classroom);
+			}// else throw error
+		});
+		return classrooms;
 	}
 
 
